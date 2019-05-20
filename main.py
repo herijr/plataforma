@@ -3,6 +3,8 @@
 import pygame as pg
 import random
 from settings import *
+from sprites import *
+
 
 class Game:
     def __init__(self):
@@ -17,6 +19,8 @@ class Game:
     def new(self):
         # start a new game
         self.all_sprites = pg.sprite.Group()
+        self.player = Player()
+        self.all_sprites.add(self.player)
         self.run()
 
     def run(self):
@@ -47,11 +51,11 @@ class Game:
         self.all_sprites.draw(self.screen)
         # *after* drawing everything, flip the display
         pg.display.flip()
-    
+
     def show_start_screen(self):
         # game splash/start screen
         pass
-    
+
     def show_go_screen(self):
         # game over / continue
         pass
